@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class ErrorConstants {
 	
-	public static final Map<Integer,String> MAX_LENGTH_ERROR = new HashMap<>();
+	public static final Map<Integer,String> ERRORS = new HashMap<>();
 
 	// Wrong Color Error
 	public static final int WRONG_COLOR_ERROR_NUM = 4;
@@ -24,10 +24,10 @@ public class ErrorConstants {
 	public static final String CUSTOM_ERROR_DESC = "Error inesperado";
 	
 	static {
-		MAX_LENGTH_ERROR.put(WRONG_COLOR_ERROR_NUM, WRONG_COLOR_ERROR_DESC);
-		MAX_LENGTH_ERROR.put(MAX_LENGTH_ERROR_NUM, MAX_LENGTH_ERROR_DESC);
-		MAX_LENGTH_ERROR.put(MAX_WORDS_AMOUNT_ERROR_NUM, MAX_WORDS_AMOUNT_ERROR_DESC);
-		MAX_LENGTH_ERROR.put(CUSTOM_ERROR_NUM, MAX_LENGTH_ERROR_DESC);
+		ERRORS.put(WRONG_COLOR_ERROR_NUM, WRONG_COLOR_ERROR_DESC);
+		ERRORS.put(MAX_LENGTH_ERROR_NUM, MAX_LENGTH_ERROR_DESC);
+		ERRORS.put(MAX_WORDS_AMOUNT_ERROR_NUM, MAX_WORDS_AMOUNT_ERROR_DESC);
+		ERRORS.put(CUSTOM_ERROR_NUM, CUSTOM_ERROR_DESC);
     }
 
 }

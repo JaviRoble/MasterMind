@@ -4,6 +4,16 @@ import com.javiroble.mastermind.utils.ErrorConstants;
 
 public class CustomError extends Throwable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public CustomError() {
+		this.errorCode = ErrorConstants.CUSTOM_ERROR_NUM;
+		this.errorMessage = ErrorConstants.CUSTOM_ERROR_DESC;
+	}
+
 	public CustomError(int errorCode, String errorMessage) {
 		this.errorCode = errorCode;
 		this.errorMessage = errorMessage;
@@ -11,7 +21,7 @@ public class CustomError extends Throwable {
 
 	public CustomError(int errorCode) {
 		this.errorCode = errorCode;
-		this.errorMessage = ErrorConstants.MAX_LENGTH_ERROR.get(errorCode);
+		this.errorMessage = (ErrorConstants.ERRORS.containsKey(errorCode) ? ErrorConstants.ERRORS.get(errorCode) : ErrorConstants.CUSTOM_ERROR_DESC);
 	}
 
 	public CustomError(String errorMessage) {
