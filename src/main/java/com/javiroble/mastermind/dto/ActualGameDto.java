@@ -14,7 +14,7 @@ public class ActualGameDto {
 	private boolean isColor = false;
 	private boolean isHard = true;
 	private int triesAmount = Constants.DEFAULT_TRIES_AMOUNT;
-	private GameTriesDto[] tries;
+	private List<GameTriesDto> tries;
 	private boolean isWon = false;
 	private boolean isFinished = false;
 	
@@ -77,7 +77,7 @@ public class ActualGameDto {
 	public int getTriesAmount() {
 		return triesAmount;
 	}
-	public GameTriesDto[] getTries() {
+	public List<GameTriesDto> getTries() {
 		return tries;
 	}
 	public boolean isWon() {
@@ -86,5 +86,15 @@ public class ActualGameDto {
 	public boolean isFinished() {
 		return isFinished;
 	}
+
+	// SETTERS
+	public void setTries(GameTriesDto tries) {
+		this.tries.add(tries);
+		if (this.tries.size() == this.triesAmount) this.isFinished = true; // TODO: lógica de decisión de victoria o derrota (en servicio)
+	}
+	public void won() {
+		this.isWon = true;
+	}
+
 }
  

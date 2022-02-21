@@ -17,6 +17,7 @@ public class ColorUtils {
 	}
 
 	public static GAME_COLOR getColor(String word) throws CustomError {
+		word = word.toLowerCase();
 		if (Constants.BLACK.contains(word))
 			return GAME_COLOR.BLACK;
 		if (Constants.WHITE.contains(word))
@@ -29,7 +30,7 @@ public class ColorUtils {
 			return GAME_COLOR.GREEN;
 		if (Constants.YELLOW.contains(word))
 			return GAME_COLOR.YELLOW;
-		throw new CustomError(ErrorConstants.MAX_LENGTH_ERROR_NUM);
+		throw new CustomError(ErrorConstants.WRONG_COLOR_ERROR_NUM);
 	}
 
 }
